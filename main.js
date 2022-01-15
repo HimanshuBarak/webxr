@@ -15,17 +15,17 @@ startAR.onclick = () =>{
   //  modelViewer.classList.add('d-none');
     video.classList.remove('d-none');
     blurwindow.classList.remove('d-none');
-    //startStream(constraints)
+    startStream(constraints)
 }
 
 enterAR.onclick = () =>{
   const stream = video.srcObject;
-  //const tracks = stream.getTracks();
-/*
+  const tracks = stream.getTracks();
+
   tracks.forEach(function(track) {
     track.stop();
   });
-*/
+
   video.srcObject = null;
   modelViewer.activateAR();
 }
