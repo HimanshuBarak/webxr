@@ -27,6 +27,9 @@ enterAR.onclick = () =>{
   });
 
   video.srcObject = null;
+  video.classList.add('d-none');
+    blurwindow.classList.add('d-none');
+    modelViewer.classList.remove('d-none');
   modelViewer.activateAR();
 }
 
