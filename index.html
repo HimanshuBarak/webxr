@@ -29,7 +29,10 @@
     <button  class="startAR">Start AR mode</button> 
     </div>
    
-    <model-viewer   id="model-viewer" ar ar-modes="webxr scene-viewer quick-look "  animation-name="Idle" camera-controls auto-rotate   src="glb/airplane.glb" style="--poster-color:#08080800;" alt="A 3D model of an astronaut." data-js-focus-visible=""  interpolation-decay="150"  ar-placement="floor" exposure="2.4" scale="0.15 0.15 0.15" orientation="0deg 0deg -45deg" field-of-view="70deg" environment-image="neutral">  
+    <model-viewer   id="model-viewer" ar ar-modes="webxr scene-viewer quick-look "  animation-name="Idle" camera-controls auto-rotate   src="glb/airplane.glb" style="--poster-color:#08080800;" alt="A 3D model of an astronaut." data-js-focus-visible=""  interpolation-decay="150"  ar-placement="floor" exposure="2.4" scale="0.15 0.15 0.15" orientation="0deg 0deg -45deg" field-of-view="70deg" environment-image="neutral"> 
+     
+       <button type="button" slot="ar-button">Enterrr</button>
+    </model-viewer>  
    
 
   
@@ -37,7 +40,7 @@
 </div>
 
 <script src="https://unpkg.com/feather-icons"></script>
-<script src="index.js"> </script>
+
 <script src="main.js"> </script>
 </body>
 </html>

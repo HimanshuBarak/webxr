@@ -3,7 +3,7 @@ feather.replace();
 const controls = document.querySelector('.controls');
 const blurwindow = document.querySelector('.blur-container');
 const pause = document.querySelector('.pause-btn')
-
+const video = document.querySelector('video')
 let streamStarted = false;
 
 const startAR = document.querySelector('.startAR')
@@ -12,13 +12,21 @@ const enterAR = document.querySelector('#enterAR')
 startAR.onclick = () =>{
    
     startAR.classList.add('d-none');
-    modelViewer.classList.add('d-none');
+  //  modelViewer.classList.add('d-none');
     video.classList.remove('d-none');
     blurwindow.classList.remove('d-none');
-    startStream(constraints)
+    //startStream(constraints)
 }
 
 enterAR.onclick = () =>{
+  const stream = video.srcObject;
+  //const tracks = stream.getTracks();
+/*
+  tracks.forEach(function(track) {
+    track.stop();
+  });
+*/
+  video.srcObject = null;
   modelViewer.activateAR();
 }
 
@@ -59,7 +67,7 @@ const startStream = async (constraints) => {
  handleStream(stream);
 };
 
-const video = document.querySelector('video');
+
 const handleStream = (stream) => {
   video.srcObject = stream;
  
