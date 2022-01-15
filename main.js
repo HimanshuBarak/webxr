@@ -12,7 +12,7 @@ const enterAR = document.querySelector('#enterAR')
 startAR.onclick = () =>{
    
     startAR.classList.add('d-none');
-  //  modelViewer.classList.add('d-none');
+    modelViewer.classList.add('d-none');
     video.classList.remove('d-none');
     blurwindow.classList.remove('d-none');
     startStream(constraints)
