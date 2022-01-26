@@ -12,7 +12,7 @@ const enterAR = document.querySelector('#enterAR')
 startAR.onclick = () =>{
    
     startAR.classList.add('d-none');
-    modelViewer.classList.add('d-none');
+   
     video.classList.remove('d-none');
     blurwindow.classList.remove('d-none');
     startStream(constraints)
@@ -20,17 +20,18 @@ startAR.onclick = () =>{
 
 enterAR.onclick = () =>{
   const stream = video.srcObject;
+  
   const tracks = stream.getTracks();
 
   tracks.forEach(function(track) {
-    track.stop();
+    track.stop(); 
   });
-
+  modelViewer.activateAR();
+  
   video.srcObject = null;
   video.classList.add('d-none');
     blurwindow.classList.add('d-none');
-    modelViewer.classList.remove('d-none');
-  modelViewer.activateAR();
+   
 }
 
 const constraints = {

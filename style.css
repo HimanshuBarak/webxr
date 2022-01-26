@@ -1,11 +1,13 @@
 *{
     margin:0px;
     
+    background-size:cover;
+   
 }
 #model-viewer{
     width: 100vw;
     height: 80vh;
-   
+    z-index: 10;
 
 }
 
