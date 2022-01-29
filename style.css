@@ -5,18 +5,15 @@
    
 }
 #model-viewer{
-    width: 100vw;
-    height: 80vh;
-    z-index: 10;
-
+    width: 10px;
+    height:8px;
 }
 
  #enterAR{
      position: absolute;
      bottom:15%;
-     left:37%;
-     margin:0 auto;
-     
+     width:150px;
+      left:45%;
      color:white;
      background:none;
      border:solid white 3px;
@@ -25,9 +22,15 @@
      font-size:clamp(20px,5vw,25px);
      font-weight:300;
  } 
+ @media only screen and (max-width: 600px) {
+     #enterAR{
+      left:34%;
+      bottom:15%;
+    }
+  }
  #enterAR:hover{
     background:#fff;
-    border:none;
+    
     color:black;
  } 
 .instruct-text{
@@ -72,7 +75,7 @@
     height: 400px;
     position: absolute;
     top:25%;
-    left:40%;
+    left:50%;
     
     
     transform: translate(-50%, 0);
@@ -84,6 +87,7 @@
     width: 100vw;
     background: none;
     height: 100vh;
+    z-index: 50;
 }
  
 

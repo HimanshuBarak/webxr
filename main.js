@@ -6,17 +6,19 @@ const pause = document.querySelector('.pause-btn')
 const video = document.querySelector('video')
 let streamStarted = false;
 
-const startAR = document.querySelector('.startAR')
+
 const modelViewer = document.querySelector('#model-viewer')
 const enterAR = document.querySelector('#enterAR')
-startAR.onclick = () =>{
+// startAR.onclick = () =>{
    
-    startAR.classList.add('d-none');
+//     startAR.classList.add('d-none');
    
-    video.classList.remove('d-none');
-    blurwindow.classList.remove('d-none');
-    startStream(constraints)
-}
+//     video.classList.remove('d-none');
+//     blurwindow.classList.remove('d-none');
+//     startStream(constraints)
+// }
+
+window.addEventListener('load',() =>startStream(constraints))
 
 enterAR.onclick = () =>{
   const stream = video.srcObject;
@@ -27,10 +29,10 @@ enterAR.onclick = () =>{
     track.stop(); 
   });
   modelViewer.activateAR();
-  
-  video.srcObject = null;
-  video.classList.add('d-none');
-    blurwindow.classList.add('d-none');
+   setTimeout(changeModel, 15000);
+  // video.srcObject = null;
+  // video.classList.add('d-none');
+  //   blurwindow.classList.add('d-none');
    
 }
 
@@ -81,13 +83,25 @@ const handleStream = (stream) => {
 };
 
 const pauseStream = () => {
-  video.src = "";
-  video.classList.add('d-none')
+ // video.src = "";
+ // video.classList.add('d-none')
   play.classList.remove('d-none');
   pause.classList.add('d-none');
 
 };
 
+
+//change models
+ window.changeModel =()=>{
+ 
+    const base = "./glb/" + 'plane';
+    modelViewer.src = './glb/airplane.glb';
+    //modelViewer.poster = base + '.png';
+   
+
+  
+  
+}
 
 
 //pause.onclick = pauseStream;

@@ -14,24 +14,27 @@
 <body>
 <div class="display-cover">
      
-        <video autoplay class="d-none"></video>
+        <video autoplay ></video>
    
-        <div class="blur-container d-none">
+        <div class="blur-container row" >
             
                 
               <a href="index.html"><button class="btn pause-btn d-none" title="Pause"><i data-feather="arrow-left"></i></button></a>  
                 
-            <div id="stabilization"></div>
-             <p  class="instruct-text"style="color:white;">Point your device to a Flat Surface and start the AR Mode</p>
-             <button id="enterAR" >Enter AR</button>
+            <div id="stabilization" class="col"></div>
+             <p  class="instruct-text col"style="color:white;">Point your device to a Flat Surface and start the AR Mode</p>
+             
+              <button id="enterAR">Enter AR</button>
+             
+             
         </div>
     
     <div class="video-options">
 
-    <button class="startAR" >Start AR mode</button> 
+  
     </div>
    
-    <model-viewer id="model-viewer"src="./glb/fridge.glb" poster="./glb/fridge.png" shadow-intensity="1" ar ar-modes="webxr scene-viewer quick-look" camera-controls alt="A 3D model carousel">
+    <model-viewer  id="model-viewer"src="./glb/fridge.glb" poster="./glb/fridge.png" shadow-intensity="1" ar ar-modes="webxr scene-viewer quick-look" camera-controls alt="A 3D model carousel">
   
         <button slot="ar-button" id="ar-button">
           View in your space
@@ -43,15 +46,7 @@
           AR is not tracking!
         </button>
       
-        <div class="slider">
-          <div class="slides">
-            <button class="slide selected" onclick="switchSrc(this, 'fridge')" style="background-image: url('./glb/fridge.png');">
-      
-            </button><button class="slide" onclick="switchSrc(this, 'airplane')" style="background-image: url('./glb/airplane.png');">
-      
-          
-          </button></div>
-        </div>
+        
       </model-viewer>
      
       
@@ -60,19 +55,7 @@
     <script type="module">
         const modelViewer = document.querySelector("model-viewer");
       
-        window.switchSrc = (element, name) => {
-          const base = "./glb/" + name;
-          modelViewer.src = base + '.glb';
-          modelViewer.poster = base + '.png';
-          const slides = document.querySelectorAll(".slide");
-          slides.forEach((element) => {element.classList.remove("selected");});
-          element.classList.add("selected");
-        };
-      
-        document.querySelector(".slider").addEventListener('beforexrselect', (ev) => {
-          // Keep slider interactions from affecting the XR scene.
-          ev.preventDefault();
-        });
+       
       </script>
   
    
