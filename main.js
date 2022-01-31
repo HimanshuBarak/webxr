@@ -95,7 +95,7 @@ const pauseStream = () => {
  window.changeModel =()=>{
  
     const base = "./glb/" + 'plane';
-    modelViewer.src = './glb/airplane.glb';
+    modelViewer.src = './glb/fridge.glb';
     //modelViewer.poster = base + '.png';
    
 
