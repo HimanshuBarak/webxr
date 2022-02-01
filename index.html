@@ -19,7 +19,7 @@
         <div class="blur-container row" >
             
                 
-              <a href="index.html"><button class="btn pause-btn d-none" title="Pause"><i data-feather="arrow-left"></i></button></a>  
+             
                 
             <div id="stabilization" class="col"></div>
              <p  class="instruct-text col"style="color:white;">Point your device to a Flat Surface and start the AR Mode</p>
@@ -36,10 +36,10 @@
    
     <model-viewer  id="model-viewer"src="./glb/fridge.glb" poster="./glb/fridge.png" shadow-intensity="1" ar ar-modes="webxr scene-viewer quick-look" camera-controls alt="A 3D model carousel">
   
-        <button slot="ar-button" id="ar-button">
-          View in your space
-        </button>
-      
+       
+        <button slot="exit-webxr-ar-button" id="exitAr" style="background-color: none; border-radius: 4px; border: none; position: absolute; top: 16px; right: 16px; ">
+          <a href="index.html"><i data-feather="x"></i></a>
+      </button>
         
       
         <button id="ar-failure">

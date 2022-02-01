@@ -29,6 +29,9 @@ enterAR.onclick = () =>{
     track.stop(); 
   });
   modelViewer.activateAR();
+  setTimeout(()=>{audio.play()},4000)
+
+
    setTimeout(changeModel, 15000);
   // video.srcObject = null;
   // video.classList.add('d-none');
@@ -56,6 +59,7 @@ const constraints = {
 
 
 
+var audio = new Audio('./assets/Rename.mp3');
 
 
 
@@ -77,7 +81,7 @@ const startStream = async (constraints) => {
 const handleStream = (stream) => {
   video.srcObject = stream;
  
-  pause.classList.remove('d-none');
+  
   
   streamStarted = true;
 };
@@ -95,15 +99,7 @@ const pauseStream = () => {
  window.changeModel =()=>{
  
     const base = "./glb/" + 'plane';
-    modelViewer.src = './glb/airplane.glb';
-    //modelViewer.poster = base + '.png';
-   
-
-  
+    modelViewer.src = './glb/fridge.glb';
+    //modelViewer.poster = base + '.png'; 
   
 }
-
-
-//pause.onclick = pauseStream;
-
-
