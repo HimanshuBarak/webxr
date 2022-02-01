@@ -28,11 +28,12 @@ enterAR.onclick = () =>{
   tracks.forEach(function(track) {
     track.stop(); 
   });
-  modelViewer.activateAR();
   setTimeout(()=>{audio.play()},4000)
 
 
    setTimeout(changeModel, 15000);
+  modelViewer.activateAR();
+  
   // video.srcObject = null;
   // video.classList.add('d-none');
   //   blurwindow.classList.add('d-none');
@@ -100,6 +101,7 @@ const pauseStream = () => {
  
     const base = "./glb/" + 'plane';
     modelViewer.src = './glb/fridge.glb';
-    //modelViewer.poster = base + '.png'; 
+    //modelViewer.poster = base + '.png';
+  
   
 }
